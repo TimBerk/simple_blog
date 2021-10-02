@@ -19,7 +19,7 @@
 ===
 
 - Poetry 1.1+
-- Python 3.8+
+- Python 3.9+
 - Django 3.2+
 
 Установка
