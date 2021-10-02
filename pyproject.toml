@@ -1,0 +1,72 @@
+[tool.poetry]
+name = "simple_blog"
+version = "0.1.0"
+description = "Simple blog on DRF"
+authors = ["Lysak Tatiana <lysak.tatiana2501@ya.ru>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3.2.7"
+djangorestframework = "^3.12.4"
+django-filter = "^21.1"
+django-environ = "^0.7.0"
+drf-yasg = "^1.20.0"
+djangorestframework-simplejwt = "^4.8.0"
+djoser = "^2.1.0"
+django-mptt = "^0.13.4"
+django-cors-headers = "^3.9.0"
+
+[tool.poetry.dev-dependencies]
+flakehell = "^0.9.0"
+flake8 = "3.8.4"
+flake8-quotes = "^3.3.0"
+pep8-naming = "0.11.1"
+flake8-isort = "^4.0.0"
+
+[tool.flakehell]
+exclude = ['README.rst', 'README.md', '**/migrations/**', '.venv/**', 'cache/**', 'static/**']
+format = 'colored'
+max_line_length = 120
+show_source = true
+inline-quotes = 'single'
+
+[tool.flakehell.plugins]
+flake8-bandit = ['+*', '-S322']
+flake8-bugbear = ['+*']
+flake8-builtins = ['+*']
+flake8-comprehensions = ['+*']
+flake8-darglint = ['+*']
+flake8-docstrings = ['+*']
+flake8-eradicate = ['+*']
+flake8-isort = ['+*']
+flake8-mutable = ['+*']
+flake8-pytest-style = ['+*']
+flake8-spellcheck = ['+*']
+flake8-quotes = ['+*']
+mccabe = ['+*']
+pep8-naming = ['+*']
+pycodestyle = ['+*', '-W503', '-E203', '-E501', '-E121']
+pyflakes = ['+*']
+pylint = ['+*']
+
+[tool.flake8-quotes]
+exclude = ['README.md', '**/migrations/**', '.venv/**', 'cache/**', 'static/**']
+
+[tool.isort]
+skip_glob = ['README.rst', 'README.md', '**/migrations/**', '.venv/**', 'cache/**', 'static/**']
+
+[tool.flake8-isort]
+exclude = ['README.rst', 'README.md', '**/migrations/**', '.venv/**', 'cache/**', 'static/**']
+balanced_wrapping = true
+combine_as_imports = true
+include_trailing_comma = true
+lines_after_imports = 2
+multi_line_output = 3
+default_section = 'THIRDPARTY'
+known_django = 'django'
+known_local_folder = ['api', 'posts', 'users']
+sections = ['FUTURE','STDLIB','THIRDPARTY','DJANGO','FIRSTPARTY','LOCALFOLDER']
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
